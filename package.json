@@ -1,0 +1,56 @@
+{
+  "name": "restaurants",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "dev-client": "vite",
+    "dev-server": "json-server --watch --port 4002 --delay 1500 server.json",
+    "dev": "conc \"npm:dev-*\"",
+    "health-test": "vitest run",
+    "health-type": "tsc",
+    "health": "conc \"npm:health-*\" --group",
+    "test": "vitest watch",
+    "lint": "eslint \"src/**/*.{js,ts,tsx}\""
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.56.2",
+    "axios": "^1.7.7",
+    "lodash.debounce": "^4.0.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.22.2",
+    "styled-components": "^6.1.8",
+    "styled-normalize": "^8.1.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "axios-mock-adapter": "^2.0.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.35.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-vitest": "^0.5.4",
+    "globals": "^16.4.0",
+    "jsdom": "^24.0.0",
+    "json-server": "^0.17.4",
+    "prettier": "^3.2.5",
+    "typescript": "^5.2.2",
+    "vite": "^7.1.5",
+    "vite-plugin-svgr": "^4.2.0",
+    "vitest": "^3.2.4"
+  }
+}
