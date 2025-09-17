@@ -12,8 +12,8 @@ export const colorPalette = {
   catskillWhite: '#caf0f6',
   paleViolet: '#57b8eb',
   linkWater: '#b4f7fc',
-  ghostWhite: '#b9faff',
-  blank: '#ffffff'
+  ghostWhite: '#f8fafa',
+  blank: '#ffffff' 
 }
 
 export const uiKitColors = {

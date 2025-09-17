@@ -22,7 +22,6 @@ const GlobalStyle = createGlobalStyle`
   
   :root {
     --font-primary: sans-serif;
-    --layout-width: 1100px;
   }
 
   html {

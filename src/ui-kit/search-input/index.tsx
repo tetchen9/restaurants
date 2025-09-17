@@ -3,10 +3,12 @@ import styled from 'styled-components'
 import iconSearchUrl from '@/theme/icons/search.svg'
 
 const StyledInput = styled.input`
+  width: 100%;
   height: 2rem;
   padding: 6px 12px 6px 34px;
-  border-radius: 25px;
   border: 1px solid ${({ theme }) => theme.color.input.border};  
+  border-left-width: 0;
+  border-right-width: 0;
   background-color: ${({ theme }) => theme.color.input.background};
   background-image: url("${iconSearchUrl}");
   background-repeat: no-repeat;

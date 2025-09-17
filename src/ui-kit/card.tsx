@@ -8,6 +8,8 @@ export const Card = styled.div`
   background-color:${({ theme }) => theme.color.blank};
   border-radius: ${cardRadius};
   box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 100%;
 `
 
 export const CardHeader = styled.header`

@@ -15,7 +15,7 @@ const Container = styled.div`
   width: 36px;
 
   svg .logo {
-    stroke: ${({ theme }) => theme.color.sapphire};
+    stroke: ${({ theme }) => theme.color.darkBlue};
     stroke-dashoffset: 0;
     stroke-dasharray: 650px;
     animation: ${animation} 1.2s infinite alternate;

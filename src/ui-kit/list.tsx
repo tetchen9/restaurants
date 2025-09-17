@@ -3,22 +3,20 @@ import styled from 'styled-components'
 
 export const StyledList = styled.ul`
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0 1rem;
   ${({ theme }) => theme.typography.bodySmall};
 `
 
 export const ListItem = styled.li`
-  padding: 16px 0 16px 20px;
-  ${({ theme }) => theme.typography.bodyBold};
-  white-space: nowrap;
+  padding: 1rem 0;
+  ${({ theme }) => theme.typography.body};
 `
 
 export const ListLoading = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 166px;
+  height: 10rem;
 `
 
 type Props = ComponentPropsWithoutRef<'ul'>
