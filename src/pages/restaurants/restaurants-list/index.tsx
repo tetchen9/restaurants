@@ -1,10 +1,11 @@
 import { ReactElement } from 'react'
 import { type Restaurant } from '@/types/restaurant'
+import { RouterLink } from '@/ui-kit/router-link'
 import { LoadingLogo } from '@/ui-kit/loading-logo'
 import { List, ListItem, ListLoading } from '@/ui-kit/list'
 import { useRestaurantContext } from '@/context/use-restaurant-context'
 import { NoRestaurantsText } from './restautants-list.styles'
-
+import RestaurantCard from './restaurant-card'
 /**
  * RestaurantsList component renders a list displaying a collection of restaurants with their details.
  * It uses the `useRestaurantsContext` hook to fetch the data and handles loading and empty states.
@@ -20,7 +21,9 @@ const RestaurantsList = (): ReactElement => {
     <List>
       {!isLoading && restaurants !== undefined && restaurants?.map((restaurant: Restaurant) => (
         <ListItem key={restaurant.objectId}>
-          {restaurant.name}
+          <RouterLink to={`/restaurants/${restaurant.name}`}>
+            <RestaurantCard restaurant={restaurant} />
+          </RouterLink>
         </ListItem>
       ))}
     </List>

@@ -1,7 +1,6 @@
 import { ReactElement, useState } from 'react'
 import { SearchInput } from '@/ui-kit/search-input'
 import { useRestaurantContext } from '@/context/use-restaurant-context'
-import { StyledSearchCard } from './search-card.styles'
 
 export const SearchCard = (): ReactElement => {
   const { search, onSearchChange } = useRestaurantContext()
@@ -13,13 +12,11 @@ export const SearchCard = (): ReactElement => {
   }
 
   return (
-    <StyledSearchCard>
-      <SearchInput 
-        placeholder='e.g. chinese, pizza' 
-        onChange={handleSearchChange} 
-        aria-label='Search by name'
-        value={localSearchValue}
-      />
-    </StyledSearchCard>
+    <SearchInput 
+      placeholder='e.g. chinese, pizza' 
+      onChange={handleSearchChange} 
+      aria-label='Search by name'
+      value={localSearchValue}
+    />
   )
 }

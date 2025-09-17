@@ -2,6 +2,7 @@ import { useState, useEffect, createContext, ReactNode, useMemo } from 'react'
 import debounce from 'lodash.debounce'
 import { useFetchRestaurants } from '@/hooks/use-fetch-restaurants'
 import { type Restaurant } from '@/types/restaurant'
+import { sortRestaurantsByBestDeals } from '@/service/sorting-utils'
 
 export type RestaurantsContextType = {
   restaurants: Restaurant[] | undefined
@@ -27,6 +28,9 @@ export function RestaurantsContextProvider({ children }: ContextProviderProps): 
 
   const { data: restaurants, isError, isSuccess, isPending: isLoading } = useFetchRestaurants(search)
 
+  const sortedRestaurants = restaurants !== undefined ? 
+    sortRestaurantsByBestDeals(restaurants) : undefined
+
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const name = e.target.value
     setSearch(name)
@@ -44,7 +48,7 @@ export function RestaurantsContextProvider({ children }: ContextProviderProps): 
   }, [debouncedSearchChange])
 
   const contextValue = {
-    restaurants,
+    restaurants: sortedRestaurants,
     search,
     isError,
     isLoading,

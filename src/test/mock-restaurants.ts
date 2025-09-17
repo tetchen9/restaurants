@@ -1,6 +1,6 @@
-// import { type Restaurant } from '@/types/restaurant'
+import { type Restaurant } from '@/types/restaurant'
 
-export const mockRestaurants = [
+export const mockRestaurants: Restaurant[] = [
   {
     'objectId': 'DEA567C5-F64C-3C03-FF00-E3B24909BE00',
     'name': 'Masala Kitchen',
@@ -12,6 +12,7 @@ export const mockRestaurants = [
     'imageLink': '',
     'open': '3:00pm',
     'close': '9:00pm',
+    'deals': [],
   },
   {
     'objectId': 'D80263E8-FD89-2C70-FF6B-D854ADB8DB00',
@@ -24,6 +25,7 @@ export const mockRestaurants = [
     'imageLink': '',
     'open': '12:00pm',
     'close': '11:00pm',
+    'deals': [],
   },
   {
     'objectId': 'CDB2B42A-248C-EE20-FF45-8D0A8057E200',
@@ -35,6 +37,7 @@ export const mockRestaurants = [
     ],
     'imageLink': '',
     'close': '9:00pm',
+    'deals': [],
   }
 
 ]

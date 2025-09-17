@@ -9,15 +9,16 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/test/setup',
     globals: true,
-  },
-  server: {
-    proxy: {
-      '/misc': {
-        target: 'https://eccdn.com.au',
-        changeOrigin: true,
-        secure: false, 
-      }
-    }
   }
+  //https://dinnerdeal.backendless.com
+  // server: {
+  //   proxy: {
+  //     '/misc': {
+  //       target: 'https://eccdn.com.au',
+  //       changeOrigin: true,
+  //       secure: false, 
+  //     }
+  //   }
+  // }
 
 })

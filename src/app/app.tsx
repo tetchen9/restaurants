@@ -6,6 +6,7 @@ import { RestaurantsContextProvider } from '@/context/restaurant-page-context'
 import { useListQueryClient } from '@/hooks/query-client'
 import { ThemeProvider } from '@/theme/provider'
 import { AppHeader } from './header'
+import { RestaurantDetailsPage } from '@/pages/reastaurant-details/page'
 
 /**
  * The main application component that sets up the context providers, routing, and theming for the app.
@@ -31,6 +32,7 @@ export const App = (): ReactElement => {
           <RestaurantsContextProvider>
             <Routes>
               <Route index element={<RestaurantsPage />} />
+              <Route path="/restaurants/:name" element={<RestaurantDetailsPage />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </RestaurantsContextProvider>
