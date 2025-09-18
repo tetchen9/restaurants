@@ -13,14 +13,14 @@ The project follows a typical process to run at your local:
 
 **This list is only for reference.**
 
-- [JSON Server](https://github.com/typicode/json-server)
-- [Node.js](https://nodejs.org/)
-- [NPM](https://www.npmjs.com)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
 - [React Router](https://reactrouter.com/en/main)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- [React](https://react.dev/)
 - [Styled Component](https://styled-components.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [Node.js](https://nodejs.org/)
+- [NPM](https://www.npmjs.com)
+- [JSON Server](https://github.com/typicode/json-server)
 - [Vite](https://vitejs.dev/)
 - [Vitest](https://vitest.dev/)
 
@@ -31,4 +31,4 @@ The project follows a typical process to run at your local:
 - **`test`: Start the test runner in watch mode.**
   You can update the tests and see the results immediately.
 - **`lint`: Run a check for the project's health.**
-  At the moment, it includes Vitest, TypeScript, and ESLint.
+  At the moment, it includes and ESLint.

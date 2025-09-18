@@ -6,9 +6,7 @@ export const NoRestaurantsText = styled(Text).attrs({
 })`
   display: block;
   width: 100%;
-  padding: 20px 0;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  padding: 2rem 0;
   text-align: center;
 `
 
@@ -17,7 +15,6 @@ export const RestaurantNameWrapper = styled.div<{ $isFavourite: boolean }>`
   justify-content: space-between;
   align-items: center;
   padding-top: 1rem;
-  ${({ theme }) => theme.typography.h2};
 
   svg {
     fill: ${({ $isFavourite, theme }) => 
@@ -28,4 +25,20 @@ export const RestaurantNameWrapper = styled.div<{ $isFavourite: boolean }>`
     fill: ${({ theme }) => theme.color.darkBlue} !important;
   }
 `
+export const RestaurantAddress = styled(Text).attrs({
+  $variant: 'bodySmall'
+})`
+  padding: 0.5rem 0 1rem 0;
+  color: ${({ theme }) => theme.color.gray};
+`
 
+export const RestaurantName = styled(Text).attrs({
+  $variant: 'h2'
+})`
+  font-family: 'Creo ExtraBold', sans-serif;
+`
+
+export const ImageWrapper = styled.div`
+  width: 100%;
+  position: relative;
+`

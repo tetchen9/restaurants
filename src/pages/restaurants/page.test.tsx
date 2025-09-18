@@ -12,6 +12,7 @@ import { mockRestaurants } from '@/test/mock-restaurants'
 import { useListQueryClient } from '@/hooks/query-client'
 import { RestaurantsPage } from './page'
 import appConfig from '@/config'
+import { act } from '@testing-library/react' 
 
 const mockAxios = new MockAdapter(axios)
 mockAxios.onGet(`${appConfig.baseAPIUrl}/restaurants`)
@@ -74,16 +75,20 @@ describe('RestaurantsPage', () => {
       ], { timeout: 500 })
     })
 
-    it('should search the list', async() => {
+    it('should search the list', async () => {
       RenderWithRestaurantsContext(<RestaurantsPage />)
       const searchBox = screen.getByRole('searchbox', { name: /Search by name/i })
       expect(searchBox).toBeInTheDocument()
-      await userEvent.type(searchBox, 'Masala Kitchen')
-      await waitFor(() => [
-        expect(screen.getAllByRole('listitem').length).toBe(1) ,
-        expect(screen.getByText('Masala Kitchen')).toBeInTheDocument(),
+      
+      await act(async () => {
+        await userEvent.type(searchBox, 'Masala Kitchen')
+      })
+      
+      await waitFor(() => {
+        expect(screen.getAllByRole('listitem').length).toBe(1)
+        expect(screen.getByText('Masala Kitchen')).toBeInTheDocument()
         expect(screen.queryByText('ABC Chicken')).not.toBeInTheDocument()
-      ], { timeout: 1500 })
+      }, { timeout: 1500 })
     })
 
     it('should show a loader icon while data is loading', async() => {

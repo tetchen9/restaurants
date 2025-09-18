@@ -3,7 +3,7 @@ import RestaurantsList from '.'
 import { RestaurantsContext, RestaurantsContextType } from '@/context/restaurant-page-context'
 import { ReactNode } from 'react'
 import { mockRestaurants } from '@/test/mock-restaurants'
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom'
 
 Object.defineProperty(window, 'matchMedia', {
   value: vi.fn(),

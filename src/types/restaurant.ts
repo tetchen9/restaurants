@@ -2,11 +2,13 @@
 export interface Deal {
   objectId: string
   discount: string
-  dineIn: string  // could be "true" or "false" as string per example
-  lightning?: string  // optional because not all deals have this field
-  open?: string       // optional because some deals are missing it
-  close?: string      // optional
+  dineIn: 'true' | 'false'   
+  lightning?: 'true' | 'false' 
+  open?: string       
+  close?: string      
   qtyLeft: string
+  start?: string    
+  end?: string      
 }
 
 export interface Restaurant {
