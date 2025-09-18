@@ -27,14 +27,14 @@ export const uiKitColors = {
     background: colorPalette.blank,
     border: colorPalette.lynch,
     hover: {
-      background: colorPalette.catskillWhite,
+      background: colorPalette.ghostWhite,
     },
     focus: {
       outline: colorPalette.lynch,
-      background: colorPalette.catskillWhite,
+      background: colorPalette.ghostWhite,
     },
     filled: {
-      background: colorPalette.catskillWhite,
+      background: colorPalette.ghostWhite,
     }
   },
 }

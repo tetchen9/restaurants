@@ -52,6 +52,12 @@ export const RestaurantHeader = styled.header`
 
 export const PageWrapper = styled.main`
   min-height: 100vh;
+  
+  @media ${({theme}) => theme.device.tablet} {
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+
 `
 
 export const InfoSection = styled.section`
@@ -59,4 +65,5 @@ export const InfoSection = styled.section`
   flex-direction: column;
   padding-top: .5rem;
   border-top: 1px solid ${({ theme }) => theme.color.lightGray};
+  border-bottom: 1px solid ${({ theme }) => theme.color.lightGray};
 `
