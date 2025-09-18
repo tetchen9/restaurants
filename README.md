@@ -4,21 +4,17 @@ A React-based restaurant discovery app that enables users to search and browse r
 
 ### Key features include:
 
-Debounced search input (500ms delay) to prevent excessive API calls.
-
-Real-time restaurant filtering based on search queries: partial name and partial cuisine.
+Real-time restaurant filtering based on search queries: partial name and partial cuisine. Debounced search input (500ms delay) to prevent excessive API calls.
 
 Optimized search state management using React Context.
-
-<br/>
-<img style="margin-bottom: '20px;'" width="394" height="520" alt="image" src="https://github.com/user-attachments/assets/52dadd71-b8eb-4cab-8bff-98dfa1299441" />
-<br/><br/>
 
 Search by multiple words, coma separated.
 
 <br/>
-<img style="margin-bottom: '20px;'" width="394" height="662" alt="image" src="https://github.com/user-attachments/assets/9bb70034-8f6b-4270-a933-5eb07ffb4972" />
+<img width="395" height="759" alt="image" src="https://github.com/user-attachments/assets/a9adfc26-8252-42d1-a5eb-2090937fd23a" />
+
 <br/><br/>
+
 
 Deal sorting:
 Automatic sorting of restaurants by best available deals.
@@ -29,7 +25,8 @@ User-friendly URLs show the restaurant name with spaces replaced by '-', for exa
 `/restaurants/gyoza-gyoza-melbourne-central`
 
 <br/>
-<img style="margin-bottom: '20px;'" width="394" height="661" alt="image" src="https://github.com/user-attachments/assets/e56b981a-fe9a-4963-892a-ee9f2ff573a7" />
+<img width="395" height="759" alt="image" src="https://github.com/user-attachments/assets/bda9ea0e-7283-45f9-a7fc-248dd08ff468" />
+
 <br/><br/>
 
 
