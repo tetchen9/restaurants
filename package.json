@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev-client": "vite",
-    "dev-server": "json-server --watch --port 4002 --delay 1500 server.json",
+    "dev-server": "json-server --watch --port 4002 --delay 100 server.json",
     "dev": "conc \"npm:dev-*\"",
     "health-test": "vitest run",
     "health-type": "tsc",

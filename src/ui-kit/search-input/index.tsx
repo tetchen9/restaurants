@@ -41,6 +41,13 @@ const StyledInput = styled.input`
   &:valid {
     background-color: ${({ theme }) => theme.color.input.filled.background};
   }
+
+  @media ${({theme}) => theme.device.tablet} {
+    max-width: 20rem;
+    border: 1px solid ${({ theme }) => theme.color.input.border};  
+    border-radius: 2rem;
+    margin: 1rem 0;
+  }
 `
 
 type InputProps = ComponentPropsWithoutRef<'input'>

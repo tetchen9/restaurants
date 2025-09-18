@@ -19,10 +19,6 @@ const ImageContainer = styled.div<{ aspectRatio?: string, $borderRadius?: string
   border-radius: ${({ $borderRadius }) => $borderRadius || '0.5rem'};
 
   background-color: ${({ theme }) => theme.color.lightGray};
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 `
 
 const StyledImage = styled.img<{ $isLoaded: boolean }>`

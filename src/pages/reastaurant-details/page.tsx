@@ -9,78 +9,115 @@ import { DealsList } from './deals-list'
 import { Image } from '@/ui-kit/image'
 import { createSlug } from '@/service/filter-utils'
 import { LoadingLogo } from '@/ui-kit/loading-logo'
+import { DetailsHeader } from './details-header'
 import {
   Container,
-  Header,
   RestaurantName,
   Cuisines,
   InfoRow,
+  NoRestaurantsText,
+  PageWrapper,
+  RestaurantHeader,
+  InfoSection,
 } from './details-page.styles'
 
 /**
- * Page for restaurant details.
- * The restaurant is getting retrieved from Context.
- * doing it this way only in the small app, in a large app 
- * would use something like 
- * React Query/SWR with API call like so:
- * const { data: restaurant } = useQuery(['restaurant', paramId], 
- *   () => fetchRestaurant(paramId)
- * )
- * @returns 
+ * Page component displaying detailed restaurant information including deals.
+ * 
+ * Retrieves restaurant data from context using URL slug parameter.
+ * In production apps, consider using React Query/SWR with direct API calls:
+ * `const { data: restaurant } = useQuery(['restaurant', paramId], () => fetchRestaurant(paramId))`
+ * 
+ * @returns Restaurant details page with image, info, and deals list
  */
 export const RestaurantDetailsPage = (): ReactElement => {
-  const { name : paramName } = useParams<{ name: string }>()
-  const { restaurants, isLoading } = useRestaurantContext()
+  const { name: paramName } = useParams<{ name: string }>()
+  const { restaurants, isLoading, isError } = useRestaurantContext()
 
+  if (isLoading) {
+    return <LoadingLogo data-testid='list-loading-icon' />
+  }
+
+  if (isError) {
+    return (
+      <Container>
+        <NoRestaurantsText>Failed to load restaurant details. </NoRestaurantsText>
+      </Container>
+    )
+  }
+
+  // Find restaurant by slug
   const restaurant = restaurants?.find(r => createSlug(r.name) === paramName)
 
+  // Show not found state
   if (!restaurant) {
-    if (isLoading) {
-      return (<LoadingLogo data-testid='list-loading-icon'/>)
-    }
-    return <div>Restaurant not found</div>
+    return (
+      <Container>
+        <NoRestaurantsText>Restaurant not found</NoRestaurantsText>
+      </Container>
+    )
   }
+
   const { name, imageLink, cuisines, open, close, address1, suburb, deals } = restaurant
 
-  const onRedeemDeal = (dealId: string) => {
-    console.log(`Redeeming deal with ID: ${dealId}`)
-  }
-
-  const formatDealTime = (deal: Deal) => {
+  // Format deal time with fallbacks
+  const formatDealTime = (deal: Deal): string => {
     if (deal.open && deal.close) {
       return `${deal.open} - ${deal.close}`
     }
     if (deal.start && deal.end) {
       return `${deal.start} - ${deal.end}`
     }
-    return `${open} - ${close}`
+    if (open && close) {
+      return `${open} - ${close}`
+    }
+    return 'Hours not available'
   }
 
-  return (<>
-    <Image 
-        src={imageLink} 
-        alt={name} 
-        borderRadius="0"
-    />
-    <Container>
-      <Header>
-        <RestaurantName as='h1'>{name}</RestaurantName>
-        <Cuisines>{cuisines.join(' • ')}</Cuisines>
-        
-        <InfoRow>
-          <IconClock />
-          <Text $variant="body">Hours: {open} - {close}</Text>
-        </InfoRow>
-        
-        <InfoRow>
-          <IconPin />
-          <Text $variant="body">{address1}, {suburb}</Text>
-        </InfoRow>
-      </Header>
+  // Prepare display data with fallbacks
+  const displayCuisines = cuisines?.length > 0 && cuisines.join(' • ') 
+  const displayHours = (open && close) && `${open} - ${close}`
+  const displayAddress = [address1, suburb].filter(Boolean).join(', ')
 
-      <DealsList deals={deals} formatDealTime={formatDealTime} onRedeemDeal={onRedeemDeal} />
-    </Container>
-  </>
+  return (
+    <PageWrapper>
+      <Image 
+        src={imageLink} 
+        alt={`${name} restaurant`}
+        borderRadius="0"
+      />
+      
+      <Container>
+        <DetailsHeader />
+        
+        <RestaurantHeader>
+          <RestaurantName as='h1'>{name}</RestaurantName>
+          <Cuisines role="text" aria-label="Restaurant cuisines">
+            {displayCuisines}
+          </Cuisines>
+        </RestaurantHeader>
+        
+        <InfoSection aria-label="Restaurant information">
+          <InfoRow>
+            <IconClock aria-hidden="true" />
+            <Text $variant="body">Hours: {displayHours}</Text>
+          </InfoRow>
+          
+          <InfoRow>
+            <IconPin aria-hidden="true" />
+            <Text $variant="body">{displayAddress}</Text>
+          </InfoRow>
+        </InfoSection>
+
+        {deals?.length > 0 ? (
+          <DealsList 
+            deals={deals} 
+            formatDealTime={formatDealTime}
+          />
+        ) : (
+          <NoRestaurantsText>No deals available at this time</NoRestaurantsText>
+        )}
+      </Container>
+    </PageWrapper>
   )
 }
-

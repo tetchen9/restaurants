@@ -26,9 +26,10 @@ interface DealBannerProps {
 }
 
 export const DealBadge = ({ deal }: DealBannerProps): ReactElement => {
-  const { discount, dineIn, close} = deal
+  const { discount, dineIn, close, end } = deal
   const label = `${discount}% off${dineIn ? ' - Dine In' : ''}` 
-  const time = close !== undefined ? `Arrive before ${close}` : 'Anytime today'
+  const endTime = close || end
+  const time = endTime !== undefined ? `Arrive before ${endTime}` : 'Anytime today'
 
   return (
     <Badge>

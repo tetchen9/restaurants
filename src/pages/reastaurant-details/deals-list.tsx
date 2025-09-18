@@ -1,6 +1,5 @@
-import { ReactElement } from 'react'
+import { ReactElement, useMemo } from 'react'
 import { type Deal } from '@/types/restaurant'
-
 import { Text } from '@/ui-kit/text'
 import {
   DealsSection,
@@ -16,33 +15,43 @@ import {
 interface DealsListProps {
   deals: Deal[]
   formatDealTime: (deal: Deal) => string
-  onRedeemDeal: (dealId: string) => void
 }
 
-export const DealsList = ({ deals, formatDealTime, onRedeemDeal }: DealsListProps): ReactElement => {
-  const dealsSorted = [...deals].sort((a, b) => 
-    parseInt(b.discount) - parseInt(a.discount))
+/**
+ * Displays a sorted list of deals with discount information and redeem functionality.
+ * 
+ * @param deals - Array of deal objects to display
+ * @param formatDealTime - Function to format deal time periods for display
+ * @returns Rendered list of deal cards sorted by discount percentage (highest first)
+ */
+export const DealsList = ({ deals, formatDealTime }: DealsListProps): ReactElement => {
+  const dealsSorted = useMemo(() => 
+    [...deals].sort((a, b) => (parseInt(b.discount, 10) || 0) - (parseInt(a.discount)) || 0),
+    [deals]
+  )
+
+  const formatDiscountText = (discount: string) => 
+    `${discount}% off`
+  const formatDineType = (dineIn: string, qtyLeft: string) => 
+    `${dineIn === 'true' ? 'Dine-in only' : 'Takeaway only'} • ${qtyLeft} Deals left`
 
   return <DealsSection>
     {dealsSorted.map((deal) => (
       <DealCard key={deal.objectId}>
         <DealContent>
           <DealHeader>
-            <DiscountText>{deal.discount}% off</DiscountText>
+            <DiscountText>{formatDiscountText(deal.discount)}</DiscountText>
           </DealHeader>
 
-          <Text $variant="bodySmall">{`Betweeen ${formatDealTime(deal)}`}</Text>
-
+          <Text $variant="bodySmall">{`Between ${formatDealTime(deal)}`}</Text>
           <DealMeta>
             <Text $variant="bodySmall">
-              {deal.dineIn === 'true' ? 'Dine-in only' : 'Takeaway only'} • {deal.qtyLeft} Deals left
+              {formatDineType(deal.dineIn, deal.qtyLeft)}
             </Text>
           </DealMeta>
         </DealContent>
 
-        <RedeemButton onClick={() => onRedeemDeal(deal.objectId)}>
-          Redeem
-        </RedeemButton>
+        <RedeemButton aria-label='Redeem'>Redeem</RedeemButton>
       </DealCard>
     ))}
   </DealsSection>

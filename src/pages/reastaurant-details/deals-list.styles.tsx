@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const DealsSection = styled.div`
-  margin-top: 1rem;
+
 `
 
 export const DealCard = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: .5rem 0;
   border-bottom: 1px solid ${({ theme }) => theme.color.lightGray};
   transition: background-color 0.2s;
   color: ${({ theme }) => theme.color.gray};
@@ -25,11 +25,10 @@ export const DealContent = styled.div`
 export const DealHeader = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 0.25rem;
 `
 
 export const DiscountText = styled.span`
-  ${({ theme }) => theme.typography.h2};
+  ${({ theme }) => theme.typography.h3};
   font-weight: bold;
   color: ${({ theme }) => theme.color.jasperRed};
   margin-right: 0.5rem;
