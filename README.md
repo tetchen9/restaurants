@@ -46,7 +46,8 @@ Context-based state management for optimal component re-rendering.
 ### User Experience:
 
 Intuitive search interface with real-time feedback, skeletons are shown for images while images are loading.
-<br/>
+
+<br/><br/>
 <img style="margin-bottom: '20px;'" width="395" height="647" alt="image" src="https://github.com/user-attachments/assets/468e7e59-90c7-4cc7-836b-7d6ae387ebf6" />
 <br/><br/>
 
@@ -60,9 +61,10 @@ Responsive deal cards with clear discount information.
 
 <br/>
 <img width="965" height="664" alt="image" src="https://github.com/user-attachments/assets/d887ec69-d1f8-4eae-8b23-dabefa84dfec" />
-<br/>
+<br/><br/>
 
 Accessibility is incomplete, but I added navigation by tab to most components.
+
 <br/>
 <img width="393" height="663" alt="image" src="https://github.com/user-attachments/assets/b932b85f-ca68-4572-8a9f-188d5091e842" />
 <br/>
