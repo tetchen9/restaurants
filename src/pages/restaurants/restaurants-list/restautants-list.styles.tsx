@@ -47,36 +47,6 @@ export const ImageWrapper = styled.div`
   position: relative;
 `
 
-export const FavoriteButton = styled.button<{ $isFavourite: boolean }>`
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.25rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s;
-  outline: none;
-
-  &:hover,
-  &:focus-visible {
-    background-color: ${({ theme }) => theme.color.lightGray};
-  }
-
-  &:focus-visible {
-    box-shadow: 0 0 0 2px ${({ theme }) => theme.color.gray};
-  }
-
-  svg {
-    transition: color 0.2s;
-    fill: ${({ $isFavourite, theme }) => 
-      $isFavourite ? theme.color.jasperRed : 'transparent'};
-    stroke: ${({ $isFavourite, theme }) => 
-      $isFavourite ? theme.color.jasperRed : 'currentColor'};
-  }
-`
-
 export const CuisinesList = styled.p`
   ${({ theme }) => theme.typography?.body || 'font-size: 0.875rem;'};
   color: ${({ theme }) => theme.color?.gray};

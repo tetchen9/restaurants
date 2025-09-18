@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image } from '@/ui-kit/image'
 import { type Restaurant } from '@/types/restaurant'
-import IconHeart from '@/theme/icons/heart.svg?react'
+import FavouriteButton from '@/ui-kit/favourite-button'
 import { getBestDeal } from '@/service/sorting-utils'
 import { DealBadge } from '@/pages/restaurants/restaurants-list/deal-badge'
 import { 
@@ -11,7 +11,6 @@ import {
     RestaurantName,
     StyledCard,
     DetailsWrapper,
-    FavoriteButton,
     CuisinesList,
 } from './restautants-list.styles'
 
@@ -38,7 +37,6 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
         return deals?.length > 0 ? getBestDeal(deals) : null
     }, [deals])
 
-    // Handle favorite toggle with proper event handling
     const handleFavoriteToggle = React.useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault()
         e.stopPropagation()
@@ -46,7 +44,6 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
         const newFavoriteState = !isFavourite
         setIsFavourite(newFavoriteState)
         
-        // Call parent callback if provided
         if (onFavoriteToggle && objectId) {
             onFavoriteToggle(objectId, newFavoriteState)
         }
@@ -54,16 +51,7 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
         console.log(`${newFavoriteState ? 'Added' : 'Removed'} ${name || 'restaurant'} ${newFavoriteState ? 'to' : 'from'} favourites`)
     }, [isFavourite, objectId, onFavoriteToggle, name])
 
-    // Handle keyboard navigation for favorite button
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault()
-               /* eslint-disable-next-line */
-            handleFavoriteToggle(e as any)
-        }
-    }
-
-    const displayCuisines = cuisines?.length > 0 ? cuisines.join(', ') : 'Cuisine not specified'
+    const displayCuisines = cuisines?.length > 0 && cuisines.join(', ') 
 
     return (
         <StyledCard>
@@ -77,25 +65,17 @@ const RestaurantCard: React.FC<RestaurantCardProps> = ({
             
             <DetailsWrapper>
                 <RestaurantNameWrapper $isFavourite={isFavourite}>
-                    <RestaurantName>{name}</RestaurantName>
-                    
-                    <FavoriteButton
-                        $isFavourite={isFavourite}
-                        onClick={handleFavoriteToggle}
-                        onKeyDown={handleKeyDown}
-                        aria-label={`${isFavourite ? 'Remove from' : 'Add to'} favorites`}
-                        aria-pressed={isFavourite}
-                        type="button"
-                    >
-                        <IconHeart />
-                    </FavoriteButton>
+                    <RestaurantName as='h2'>{name}</RestaurantName>
+                    <FavouriteButton
+                        isFavourite={isFavourite}
+                        onToggle={handleFavoriteToggle}
+                    />
                 </RestaurantNameWrapper>
-                
                 <RestaurantAddress>{suburb}</RestaurantAddress>
                 
-                <CuisinesList>
-                    {!cuisines?.length ? '' : displayCuisines}
-                </CuisinesList>
+                {!!cuisines?.length && (
+                  <CuisinesList>{displayCuisines}</CuisinesList>
+                )}
             </DetailsWrapper>
         </StyledCard>
     )
