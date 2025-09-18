@@ -24,6 +24,7 @@ Deal sorting:
 Automatic sorting of restaurants by best available deals.
 Discount percentage prioritization (highest discounts first).
 Deal-specific information including availability and dining options.
+
 User-friendly URLs show the restaurant name with spaces replaced by '-'
 
 <br/>
@@ -35,7 +36,9 @@ User-friendly URLs show the restaurant name with spaces replaced by '-'
 ### Performance optimization:
 
 Memoized sorting operations to prevent unnecessary re-computations.
+
 Debounced search input handling for improved API efficiency.
+
 Context-based state management for optimal component re-rendering.
 
 
