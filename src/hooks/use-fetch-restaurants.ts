@@ -18,6 +18,25 @@ import { sanitiseParam, filterRestaurantsByNameOrCusine } from '@/service/filter
 // }
 
 
+/**
+ * Custom React hook for fetching and managing restaurant data with search functionality.
+ * 
+ * This hook provides a typed interface to the TanStack Query (React Query) `useQuery` hook
+ * specifically optimized for restaurant data fetching. It includes built-in search parameter
+ * sanitization, client-side filtering, and performance optimizations.
+ * 
+ * Key features:
+ * - Automatic query key generation based on sanitized search terms
+ * - Client-side filtering by restaurant name or cuisine type
+ * - Optimized caching with 500ms stale time
+ * - Disabled window focus refetching for better UX
+ * - No automatic retries on failure
+ * 
+ * @param {string} [searchTerm] - Optional search term to filter restaurants by name or cuisine.
+ *                                If not provided or empty, fetches all restaurants.
+ * 
+ * @returns {QueryObserverResult<Restaurant[], Error>} React Query result object.
+ */
 export const useFetchRestaurants = (searchTerm?: string): QueryObserverResult<Restaurant[], Error> => {
   return useQuery<Restaurant[], Error>({
     queryKey: ['restaurants', sanitiseParam(searchTerm || '')],
