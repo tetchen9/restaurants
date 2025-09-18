@@ -1,11 +1,11 @@
 import { ReactElement, useMemo } from 'react'
 import { type Deal } from '@/types/restaurant'
 import { Text } from '@/ui-kit/text'
+import { Button } from '@/ui-kit/button'
 import {
   DealCard,
   DealContent,
   DealHeader,
-  RedeemButton,
   DealMeta,
   DiscountText
 } from './deals-list.styles'
@@ -50,7 +50,7 @@ export const DealsList = ({ deals, formatDealTime }: DealsListProps): ReactEleme
           </DealMeta>
         </DealContent>
 
-        <RedeemButton aria-label='Redeem'>Redeem</RedeemButton>
+        <Button $variant="secondary" aria-label='Redeem'>Redeem</Button>
       </DealCard>
     ))}
   </>

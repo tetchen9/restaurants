@@ -34,18 +34,3 @@ export const DealMeta = styled.div`
   color: ${({ theme }) => theme.color.gray};
 `
 
-export const RedeemButton = styled.button`
-  background-color: transparent;
-  color: ${({ theme }) => theme.color.jasperRed};
-  border: 2px solid ${({ theme }) => theme.color.jasperRed};
-  padding: 0.5rem 1.5rem;
-  border-radius: 2rem;
-  ${({ theme }) => theme.typography.bodyBold};
-  cursor: pointer;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.color.jasperRedLight};
-    color: ${({ theme }) => theme.color.ghostWhite};
-  }
-`
