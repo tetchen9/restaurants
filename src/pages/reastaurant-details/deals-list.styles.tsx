@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-export const DealsSection = styled.div`
-
-`
-
 export const DealCard = styled.div`
   display: flex;
   align-items: center;

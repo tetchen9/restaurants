@@ -2,7 +2,6 @@ import { ReactElement, useMemo } from 'react'
 import { type Deal } from '@/types/restaurant'
 import { Text } from '@/ui-kit/text'
 import {
-  DealsSection,
   DealCard,
   DealContent,
   DealHeader,
@@ -35,7 +34,7 @@ export const DealsList = ({ deals, formatDealTime }: DealsListProps): ReactEleme
   const formatDineType = (dineIn: string, qtyLeft: string) => 
     `${dineIn === 'true' ? 'Dine-in only' : 'Takeaway only'} • ${qtyLeft} Deals left`
 
-  return <DealsSection>
+  return <>
     {dealsSorted.map((deal) => (
       <DealCard key={deal.objectId}>
         <DealContent>
@@ -54,5 +53,5 @@ export const DealsList = ({ deals, formatDealTime }: DealsListProps): ReactEleme
         <RedeemButton aria-label='Redeem'>Redeem</RedeemButton>
       </DealCard>
     ))}
-  </DealsSection>
+  </>
 }

@@ -1,4 +1,35 @@
-## The project
+## The project - Restaurant Discovery App
+
+A React-based restaurant discovery app that enables users to search and browse restaurants. Features real-time search capabilities, deal-based restaurant sorting, and a responsive user interface designed for efficient restaurant browsing.
+
+Key features include:
+Debounced search input (500ms delay) to prevent excessive API calls
+Real-time restaurant filtering based on search queries
+Optimized search state management using React Context
+
+Deal sorting:
+Automatic sorting of restaurants by best available deals
+Discount percentage prioritization (highest discounts first)
+Deal-specific information including availability and dining options
+
+Performance optimization:
+Memoized sorting operations to prevent unnecessary re-computations
+Debounced search input handling for improved API efficiency
+Context-based state management for optimal component re-rendering
+
+User Experience:
+Loading states and error handling throughout the application
+Responsive deal cards with clear discount information
+Intuitive search interface with real-time feedback
+
+Architecture:
+The application follows some React patterns with a focus and maintainability:
+
+Context API: Centralized state management for restaurant data and search functionality
+Custom Hooks: Abstracted data fetching logic with useFetchRestaurants
+TypeScript: Full type safety across components and data structures
+Styled Components: Modular styling architecture for consistent UI components
+Service Layer: Dedicated sorting utilities for business logic separation
 
 ### Getting started
 
