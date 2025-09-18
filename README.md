@@ -59,6 +59,8 @@ Responsive deal cards with clear discount information.
 <br/>
 <img width="1029" height="759" alt="image" src="https://github.com/user-attachments/assets/c2c0e40b-a14d-44ee-90ad-8e820bb09fc4" />
 <br/><br/>
+<img width="947" height="552" alt="image" src="https://github.com/user-attachments/assets/e17c3ce9-f82c-4c43-8693-34c2a4243592" />
+<br/><br/>
 
 Accessibility is incomplete, but I added navigation by tab to most components.
 
