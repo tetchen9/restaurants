@@ -12,12 +12,13 @@ Optimized search state management using React Context.
 
 <br/>
 <img style="margin-bottom: '20px;'" width="394" height="520" alt="image" src="https://github.com/user-attachments/assets/52dadd71-b8eb-4cab-8bff-98dfa1299441" />
-<br/>
+<br/><br/>
 
 Search by multiple words, coma separated.
+
 <br/>
 <img style="margin-bottom: '20px;'" width="394" height="662" alt="image" src="https://github.com/user-attachments/assets/9bb70034-8f6b-4270-a933-5eb07ffb4972" />
-<br/>
+<br/><br/>
 
 Deal sorting:
 Automatic sorting of restaurants by best available deals.
@@ -26,7 +27,7 @@ Deal-specific information including availability and dining options.
 
 <br/>
 <img style="margin-bottom: '20px;'" width="394" height="661" alt="image" src="https://github.com/user-attachments/assets/e56b981a-fe9a-4963-892a-ee9f2ff573a7" />
-<br/>
+<br/><br/>
 
 
 
@@ -42,14 +43,16 @@ Context-based state management for optimal component re-rendering.
 Intuitive search interface with real-time feedback, skeletons are shown for images while images are loading.
 <br/>
 <img style="margin-bottom: '20px;'" width="395" height="647" alt="image" src="https://github.com/user-attachments/assets/468e7e59-90c7-4cc7-836b-7d6ae387ebf6" />
-<br/>
+<br/><br/>
 
 Loading states and error handling throughout the application.
+
 <br/>
 <img style="margin-bottom: '20px;'" width="396" height="261" alt="image" src="https://github.com/user-attachments/assets/9a6ba8f4-f200-48bc-b459-b3618be9ab4d" />
-<br/>
+<br/><br/>
 
 Responsive deal cards with clear discount information.
+
 <br/>
 <img width="965" height="664" alt="image" src="https://github.com/user-attachments/assets/d887ec69-d1f8-4eae-8b23-dabefa84dfec" />
 <br/>
