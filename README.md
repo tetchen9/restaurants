@@ -10,21 +10,19 @@ Real-time restaurant filtering based on search queries: partial name and partial
 
 Optimized search state management using React Context.
 
-<img width="394" height="520" alt="image" src="https://github.com/user-attachments/assets/52dadd71-b8eb-4cab-8bff-98dfa1299441" />
+<img style="margin-bottom: 20px;" width="394" height="520" alt="image" src="https://github.com/user-attachments/assets/52dadd71-b8eb-4cab-8bff-98dfa1299441" />
 
 
-<img width="394" height="662" alt="image" src="https://github.com/user-attachments/assets/9bb70034-8f6b-4270-a933-5eb07ffb4972" />
+<img style="margin-bottom: 20px;" width="394" height="662" alt="image" src="https://github.com/user-attachments/assets/9bb70034-8f6b-4270-a933-5eb07ffb4972" />
 
 
 Deal sorting:
 Automatic sorting of restaurants by best available deals.
-
 Discount percentage prioritization (highest discounts first).
-
 Deal-specific information including availability and dining options.
 
 
-<img width="394" height="661" alt="image" src="https://github.com/user-attachments/assets/e56b981a-fe9a-4963-892a-ee9f2ff573a7" />
+<img style="margin-bottom: 20px;" width="394" height="661" alt="image" src="https://github.com/user-attachments/assets/e56b981a-fe9a-4963-892a-ee9f2ff573a7" />
 
 
 
@@ -32,25 +30,21 @@ Deal-specific information including availability and dining options.
 ### Performance optimization:
 
 Memoized sorting operations to prevent unnecessary re-computations.
-
 Debounced search input handling for improved API efficiency.
-
 Context-based state management for optimal component re-rendering.
 
 
 ### User Experience:
 
 Loading states and error handling throughout the application.
-
 Responsive deal cards with clear discount information.
-
 Intuitive search interface with real-time feedback, sceletons are shown for images while images are loading.
 
 
-<img width="395" height="647" alt="image" src="https://github.com/user-attachments/assets/468e7e59-90c7-4cc7-836b-7d6ae387ebf6" />
+<img style="margin-bottom: 20px;" width="395" height="647" alt="image" src="https://github.com/user-attachments/assets/468e7e59-90c7-4cc7-836b-7d6ae387ebf6" />
 
 
-<img width="396" height="261" alt="image" src="https://github.com/user-attachments/assets/9a6ba8f4-f200-48bc-b459-b3618be9ab4d" />
+<img style="margin-bottom: 20px;" width="396" height="261" alt="image" src="https://github.com/user-attachments/assets/9a6ba8f4-f200-48bc-b459-b3618be9ab4d" />
 
 
 
