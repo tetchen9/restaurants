@@ -2,7 +2,7 @@
 
 A React-based restaurant discovery app that enables users to search and browse restaurants. Features real-time search capabilities, deal-based restaurant sorting, and a responsive user interface designed for efficient restaurant browsing.
 
-Key features include:
+### Key features include:
 
 Debounced search input (500ms delay) to prevent excessive API calls.
 
@@ -29,7 +29,7 @@ Deal-specific information including availability and dining options.
 
 
 
-Performance optimization:
+### Performance optimization:
 
 Memoized sorting operations to prevent unnecessary re-computations.
 
@@ -38,13 +38,14 @@ Debounced search input handling for improved API efficiency.
 Context-based state management for optimal component re-rendering.
 
 
-User Experience:
+### User Experience:
 
-Loading states and error handling throughout the application
+Loading states and error handling throughout the application.
 
-Responsive deal cards with clear discount information
+Responsive deal cards with clear discount information.
 
 Intuitive search interface with real-time feedback, sceletons are shown for images while images are loading.
+
 
 <img width="395" height="647" alt="image" src="https://github.com/user-attachments/assets/468e7e59-90c7-4cc7-836b-7d6ae387ebf6" />
 
@@ -53,18 +54,18 @@ Intuitive search interface with real-time feedback, sceletons are shown for imag
 
 
 
-Architecture:
+### Architecture:
 The application follows some React patterns with a focus and maintainability:
 
-Context API: Centralized state management for restaurant data and search functionality
+**Context API**: Centralized state management for restaurant data and search functionality
 
-Custom Hooks: Abstracted data fetching logic with useFetchRestaurants
+**Custom Hooks**: Abstracted data fetching logic with useFetchRestaurants
 
-TypeScript: Full type safety across components and data structures
+**TypeScript**: Full type safety across components and data structures
 
-Styled Components: Modular styling architecture for consistent UI components
+**Styled Components**: Modular styling architecture for consistent UI components
 
-Service Layer: Dedicated sorting utilities for business logic separation
+**Service Layer**: Dedicated sorting utilities for business logic separation
 
 ### Getting started
 
