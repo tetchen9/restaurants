@@ -19,6 +19,20 @@ const theme: DefaultTheme = {
 
 const GlobalStyle = createGlobalStyle`
   ${normalize}
+
+  @font-face {
+    font-family: 'Creo ExtraBold';
+    src: url("src/theme/fonts/Creo-ExtraBold.ttf") format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Creo ExtraLight';
+    src: url("src/theme/fonts/Creo-ExtraLight.ttf") format('truetype');
+    font-weight: 800;
+    font-style: normal;
+  }
   
   :root {
     --font-primary: sans-serif;

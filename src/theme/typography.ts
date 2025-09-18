@@ -24,11 +24,11 @@ export const themeTypography = {
   bodyMedium: getTextStyles(500, 16, 24),
   bodyBold: getTextStyles(600, 16, 24),
 
-  bodySmall: getTextStyles(400, 14, 22),
-  bodySmallMedium: getTextStyles(500, 14, 22),
-  bodySmallBold: getTextStyles(600, 14, 22),
+  bodySmall: getTextStyles(400, 12, 16),
+  bodySmallMedium: getTextStyles(500, 12, 16),
+  bodySmallBold: getTextStyles(600, 12, 16),
 
-  bodyCaption: getTextStyles(400, 13, 16),
+  bodyCaption: getTextStyles(400, 10, 16),
 }
 
 declare module 'styled-components' {

@@ -4,7 +4,6 @@ import styled from 'styled-components'
 export const StyledList = styled.ul`
   list-style: none;
   padding: 0 1rem;
-  ${({ theme }) => theme.typography.bodySmall};
 `
 
 export const ListItem = styled.li`

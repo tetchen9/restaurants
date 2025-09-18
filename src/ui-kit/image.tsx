@@ -11,13 +11,14 @@ const shimmer = keyframes`
   }
 `
 
-const ImageContainer = styled.div<{ aspectRatio?: string }>`
+const ImageContainer = styled.div<{ aspectRatio?: string, $borderRadius?: string }>`
   position: relative;
   width: 100%;
   aspect-ratio: ${({ aspectRatio }) => aspectRatio || '16/9'};
   overflow: hidden;
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.color.linkWater};
+  border-radius: ${({ $borderRadius }) => $borderRadius || '0.5rem'};
+
+  background-color: ${({ theme }) => theme.color.lightGray};
 
   @media (max-width: 768px) {
     width: 100%;
@@ -43,9 +44,9 @@ const SkeletonPlaceholder = styled.div<{ $isVisible: boolean }>`
   height: 100%;
   background: linear-gradient(
     90deg,
-    ${({ theme }) => theme.color.linkWater || '#f5f5f5'} 0%,
-    ${({ theme }) => theme.color.paleViolet || '#e0e0e0'} 50%,
-    ${({ theme }) => theme.color.linkWater || '#f5f5f5'} 100%
+    ${({ theme }) => theme.color.ghostWhite} 0%,
+    ${({ theme }) => theme.color.lightGray} 50%,
+    ${({ theme }) => theme.color.ghostWhite} 100%
   );
   background-size: 200px 100%;
   animation: ${shimmer} 1.5s infinite;
@@ -62,8 +63,8 @@ const PlaceholderContainer = styled.div<{ $isVisible: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${({ theme }) => theme?.color?.linkWater || '#f5f5f5'};
-  color: ${({ theme }) => theme?.color?.paleViolet || '#666'};
+  background-color: ${({ theme }) => theme.color.lightGray};
+  color: ${({ theme }) => theme.color.gray};
   opacity: ${({ $isVisible }) => ($isVisible ? 1 : 0)};
   transition: opacity 0.3s ease-in-out;
 `
@@ -79,6 +80,7 @@ interface ImageProps extends Omit<ComponentPropsWithoutRef<'img'>, 'src'> {
   alt: string
   aspectRatio?: string // e.g., '16/9', '4/3', '1/1'
   placeholderSrc?: string
+  borderRadius?: string
   onLoad?: () => void
   onError?: () => void
 }
@@ -88,6 +90,7 @@ export const Image = ({
   alt,
   aspectRatio,
   placeholderSrc,
+  borderRadius,
   onLoad,
   onError,
   ...props
@@ -119,7 +122,7 @@ export const Image = ({
   const showPlaceholder = hasError && !placeholderSrc
 
   return (
-    <ImageContainer aspectRatio={aspectRatio}>
+    <ImageContainer aspectRatio={aspectRatio} $borderRadius={borderRadius}>
       {/* Main image */}
       <StyledImage
         src={hasError && placeholderSrc ? placeholderSrc : src}
