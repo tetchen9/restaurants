@@ -3,12 +3,6 @@ import IconUser from '@/theme/icons/user.svg?react'
 import IconHamburger from '@/theme/icons/hamburger.svg?react'
 import IconLogoUrl from '@/theme/icons/logo.svg'
 
-
-const Wrapper = styled.header`
-  width: 100%;
-  background-color: ${({ theme }) => theme.color.blank};
-`
-
 const Logo = styled.div`
   width: 2rem;
   height: 2rem;
@@ -17,7 +11,7 @@ const Logo = styled.div`
   background-size: 2rem;
 `
 
-const Inner = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,11 +23,15 @@ const Inner = styled.div`
 export const AppHeader = (): JSX.Element => {
   return (
     <Wrapper>
-      <Inner>
-        <IconUser aria-label='Member icon' />
-        <Logo />
-        <IconHamburger aria-label='Menu icon' />
-      </Inner>
+      <IconUser aria-label='Member icon'     
+        tabIndex={0}
+        role="button"
+      />
+      <Logo />
+      <IconHamburger aria-label='Menu icon'     
+        tabIndex={0}
+        role="button"
+      />
     </Wrapper>
   )
 }
