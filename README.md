@@ -17,8 +17,8 @@ Search by multiple words, coma separated.
 
 
 Deal sorting:
-Automatic sorting of restaurants by best available deals.
-Discount percentage prioritization (highest discounts first).
+Automatic sorting of restaurants by best available deals (takes into account lightning and discount percentage).
+In the details page: discount percentage prioritization (highest discounts first).
 Deal-specific information including availability and dining options.
 
 User-friendly URLs show the restaurant name with spaces replaced by '-', for example 
@@ -42,7 +42,7 @@ Context-based state management for optimal component re-rendering.
 
 ### User Experience:
 
-Intuitive search interface with real-time feedback, skeletons are shown for images while images are loading.
+Intuitive search interface with real-time feedback, skeletons are shown for images while images are loading. Missing images are replaced with placeholders with icons, I assume it's a very rare case scenario.
 
 <br/><br/>
 <img style="margin-bottom: '20px;'" width="395" height="647" alt="image" src="https://github.com/user-attachments/assets/468e7e59-90c7-4cc7-836b-7d6ae387ebf6" />
@@ -63,7 +63,9 @@ Responsive deal cards with clear discount information.
 Accessibility is incomplete, but I added navigation by tab to most components.
 
 <br/>
-<img width="393" height="663" alt="image" src="https://github.com/user-attachments/assets/b932b85f-ca68-4572-8a9f-188d5091e842" />
+<img width="1029" height="759" alt="image" src="https://github.com/user-attachments/assets/c2c0e40b-a14d-44ee-90ad-8e820bb09fc4" />
+
+
 <br/>
 
 ### Architecture:
