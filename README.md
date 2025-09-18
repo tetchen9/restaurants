@@ -57,16 +57,15 @@ Loading states and error handling throughout the application.
 Responsive deal cards with clear discount information.
 
 <br/>
-<img width="965" height="664" alt="image" src="https://github.com/user-attachments/assets/d887ec69-d1f8-4eae-8b23-dabefa84dfec" />
+<img width="1029" height="759" alt="image" src="https://github.com/user-attachments/assets/c2c0e40b-a14d-44ee-90ad-8e820bb09fc4" />
 <br/><br/>
 
 Accessibility is incomplete, but I added navigation by tab to most components.
 
 <br/>
-<img width="1029" height="759" alt="image" src="https://github.com/user-attachments/assets/c2c0e40b-a14d-44ee-90ad-8e820bb09fc4" />
-
-
+<img width="395" height="761" alt="image" src="https://github.com/user-attachments/assets/327d5105-dfef-4968-af85-e927f9106ecf" />
 <br/>
+
 
 ### Architecture:
 The application follows some React patterns with a focus and maintainability:
