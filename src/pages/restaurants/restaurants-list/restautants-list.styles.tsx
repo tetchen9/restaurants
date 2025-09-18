@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Text } from '@/ui-kit/text'
 
 export const NoRestaurantsText = styled(Text).attrs({
-  $variant: 'bodySmall'
+  $variant: 'body'
 })`
   display: block;
   width: 100%;

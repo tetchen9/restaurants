@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import IconHeart from '@/theme/icons/heart.svg?react'
+import { Text } from '@/ui-kit/text'
 
 interface FavouriteButtonProps {
   /** Whether the item is currently favorited */
@@ -9,8 +10,8 @@ interface FavouriteButtonProps {
   onToggle: (e: React.MouseEvent<HTMLButtonElement>) => void
   /** Optional aria label override */
   ariaLabel?: string
-  /** Additional CSS class name */
-  className?: string
+  /** Optional indicator if label need to be shown or not */
+  withLabel?: boolean
 }
 
 const StyledFavouriteButton = styled.button<{ $isFavourite: boolean }>`
@@ -20,6 +21,7 @@ const StyledFavouriteButton = styled.button<{ $isFavourite: boolean }>`
   padding: 0.25rem;
   border-radius: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s;
@@ -43,6 +45,13 @@ const StyledFavouriteButton = styled.button<{ $isFavourite: boolean }>`
   }
 `
 
+export const Label = styled(Text).attrs({
+  $variant: 'bodySmallBold'
+})`
+  margin-top: .5rem;
+  color: ${({ theme }) => theme.color.gray};
+`
+
 /**
  * Favorite button component with heart icon and accessibility support.
  * 
@@ -55,7 +64,7 @@ export const FavouriteButton: React.FC<FavouriteButtonProps> = ({
   isFavourite,
   onToggle,
   ariaLabel,
-  className
+  withLabel
 }) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -66,6 +75,7 @@ export const FavouriteButton: React.FC<FavouriteButtonProps> = ({
   }
 
   const defaultAriaLabel = `${isFavourite ? 'Remove from' : 'Add to'} favorites`
+  const defaultLabel = 'Favourite'
 
   return (
     <StyledFavouriteButton
@@ -75,9 +85,9 @@ export const FavouriteButton: React.FC<FavouriteButtonProps> = ({
       aria-label={ariaLabel || defaultAriaLabel}
       aria-pressed={isFavourite}
       type="button"
-      className={className}
     >
       <IconHeart />
+      {withLabel && <Label>{defaultLabel}</Label>}
     </StyledFavouriteButton>
   )
 }
