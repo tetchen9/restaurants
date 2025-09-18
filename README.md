@@ -25,7 +25,8 @@ Automatic sorting of restaurants by best available deals.
 Discount percentage prioritization (highest discounts first).
 Deal-specific information including availability and dining options.
 
-User-friendly URLs show the restaurant name with spaces replaced by '-'
+User-friendly URLs show the restaurant name with spaces replaced by '-', for example 
+`/restaurants/gyoza-gyoza-melbourne-central`
 
 <br/>
 <img style="margin-bottom: '20px;'" width="394" height="661" alt="image" src="https://github.com/user-attachments/assets/e56b981a-fe9a-4963-892a-ee9f2ff573a7" />
@@ -59,6 +60,11 @@ Responsive deal cards with clear discount information.
 
 <br/>
 <img width="965" height="664" alt="image" src="https://github.com/user-attachments/assets/d887ec69-d1f8-4eae-8b23-dabefa84dfec" />
+<br/>
+
+Accessibility is incomplete, but I added navigation by tab to most components.
+<br/>
+<img width="393" height="663" alt="image" src="https://github.com/user-attachments/assets/b932b85f-ca68-4572-8a9f-188d5091e842" />
 <br/>
 
 ### Architecture:
